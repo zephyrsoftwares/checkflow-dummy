@@ -37,6 +37,12 @@ jobs:
       - name: Install AWS CLI
         run: sudo apt-get install awscli
 
+      - name: Configure AWS Default Region
+        run: aws configure set default.region eu-paris-3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          
       - name: Deploy to Development S3
         if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
         run: |
