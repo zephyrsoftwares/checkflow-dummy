@@ -21,7 +21,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.jsx",
     "lint:fix": "eslint . --ext .js,.jsx --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "format:check": "prettier --check 'src/**/*.{js,jsx}'"
   },
   "eslintConfig": {
     "extends": [
